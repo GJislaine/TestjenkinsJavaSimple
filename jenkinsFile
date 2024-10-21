@@ -22,7 +22,9 @@ pipeline {
                 bat 'java -cp out Main'
             }
         }
-    }
+         stage('DP Check'){
+             steps{
+                dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'Dep-Check'  }
 
     post {
         always {
