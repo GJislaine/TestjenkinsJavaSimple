@@ -25,7 +25,7 @@ pipeline {
          stage('DP Check'){
              steps{
                 dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'Dep-Check'  }
-
+  }
     post {
         always {
             echo 'Pipeline completed.'
@@ -38,4 +38,5 @@ pipeline {
             echo 'There was an error in the pipeline.'
         }
     }
+}
 }
