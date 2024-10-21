@@ -30,6 +30,7 @@ pipeline {
         always {
             echo 'Pipeline completed.'
             archiveArtifacts artifacts: 'out/*.class', allowEmptyArchive: true
+            dependencyCheckPublisher pattern: '**/dependency-check-report.html'
         }
         success {
             echo 'Build and tests were successful!'
